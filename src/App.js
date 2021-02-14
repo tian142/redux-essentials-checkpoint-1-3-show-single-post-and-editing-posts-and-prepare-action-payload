@@ -11,6 +11,7 @@ import { Navbar } from './app/Navbar'
 import { PostsList } from './features/posts/PostsList'
 import { AddPostForm } from './features/posts/AddPostForm'
 import { SinglePost } from './features/posts/SinglePost'
+import { EditPost } from './features/posts/EditPost'
 
 function App() {
   return (
@@ -29,6 +30,7 @@ function App() {
             )}
           />
           <Route exact path="/post/:postId" component={SinglePost} />
+          <Route exact path="/edit/:postId" component={EditPost} />
           <Redirect to="/" />
         </Switch>
       </div>

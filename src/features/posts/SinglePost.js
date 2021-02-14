@@ -11,11 +11,15 @@ export const SinglePost = ({ match }) => {
     state.posts.find((post) => post.id === postId)
   )
 
+  if (!post) {
+    return <h1>Post Not Found.</h1>
+  }
+
   return (
     <div>
       <h1>{post.title}</h1>
       <p>{post.content}</p>
-      <Link>Edit</Link>
+      <Link to={`/edit/${post.id}`}>Edit</Link>
     </div>
   )
 }
